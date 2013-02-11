@@ -123,10 +123,13 @@
 
 <div class="viewcode-block" id="SikuliServer.jython_object_addrefs"><a class="viewcode-back" href="../sikuli_server.html#sikuli_server.SikuliServer.jython_object_addrefs">[docs]</a>    <span class="k">def</span> <span class="nf">jython_object_addrefs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">id_</span><span class="p">,</span> <span class="n">refs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Adds `refs` to the number of held references to held_objects[id_]. If</span>
+<span class="sd">        Adds `refs` to the number of held references to `held_objects[id_]`. If</span>
 <span class="sd">        negative the number of references counted will be decreased, and if it</span>
 <span class="sd">        dips below zero the object will have its final reference removed so it</span>
 <span class="sd">        can be collected.</span>
+
+<span class="sd">        :param id_: int -- object id</span>
+<span class="sd">        :param refs: int - how many references to add</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">id_</span><span class="p">,</span> <span class="n">refs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">id_</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">id_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_held_objects</span> <span class="ow">and</span> <span class="n">refs</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>

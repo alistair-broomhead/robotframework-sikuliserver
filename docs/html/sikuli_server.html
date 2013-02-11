@@ -27,8 +27,9 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="SikuliServer 0.1.8 documentation" href="index.html" />
+    <link rel="up" title="SikuliServer API documentation" href="SikuliServer.html" />
     <link rel="next" title="classes" href="sikuli_server.classes.html" />
-    <link rel="prev" title="Welcome to SikuliServer‘s documentation!" href="index.html" /> 
+    <link rel="prev" title="SikuliServer API documentation" href="SikuliServer.html" /> 
   </head>
   <body>
     <div class="related">
@@ -44,9 +45,10 @@
           <a href="sikuli_server.classes.html" title="classes"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to SikuliServer‘s documentation!"
+          <a href="SikuliServer.html" title="SikuliServer API documentation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">SikuliServer 0.1.8 documentation</a> &raquo;</li> 
+        <li><a href="index.html">SikuliServer 0.1.8 documentation</a> &raquo;</li>
+          <li><a href="SikuliServer.html" accesskey="U"><tt class="docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal"><span class="pre">SikuliServer</span></tt> API documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -113,10 +115,22 @@ remote API
 <dl class="method">
 <dt id="sikuli_server.SikuliServer.jython_object_addrefs">
 <tt class="descname">jython_object_addrefs</tt><big>(</big><em>id_</em>, <em>refs</em><big>)</big><a class="reference internal" href="_modules/sikuli_server.html#SikuliServer.jython_object_addrefs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sikuli_server.SikuliServer.jython_object_addrefs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds <cite>refs</cite> to the number of held references to held_objects[<a href="#id1"><span class="problematic" id="id2">id_</span></a>]. If
+<dd><p>Adds <cite>refs</cite> to the number of held references to <cite>held_objects[id_]</cite>. If
 negative the number of references counted will be decreased, and if it
 dips below zero the object will have its final reference removed so it
 can be collected.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> &#8211; int &#8211; object id</li>
+<li><strong>refs</strong> &#8211; int - how many references to add</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -141,8 +155,8 @@ can be collected.</p>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to <tt class="docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal"><span class="pre">SikuliServer</span></tt>&#8216;s documentation!</a></p>
+  <p class="topless"><a href="SikuliServer.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal"><span class="pre">SikuliServer</span></tt> API documentation</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="sikuli_server.classes.html"
                         title="next chapter"><tt class="docutils literal"><span class="pre">classes</span></tt></a></p>
@@ -181,9 +195,10 @@ can be collected.</p>
           <a href="sikuli_server.classes.html" title="classes"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Welcome to SikuliServer‘s documentation!"
+          <a href="SikuliServer.html" title="SikuliServer API documentation"
              >previous</a> |</li>
-        <li><a href="index.html">SikuliServer 0.1.8 documentation</a> &raquo;</li> 
+        <li><a href="index.html">SikuliServer 0.1.8 documentation</a> &raquo;</li>
+          <li><a href="SikuliServer.html" ><tt class="docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal docutils literal"><span class="pre">SikuliServer</span></tt> API documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
