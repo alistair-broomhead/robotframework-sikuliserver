@@ -15,7 +15,7 @@ class ServerSikuliClass(object):
         """
         if 'cls' in kwargs:
             try:
-                from .classes import SIKULI_CLASSES
+                from jython_sikuli_server.classes import SIKULI_CLASSES
                 cls = SIKULI_CLASSES[kwargs['cls']]
             except BaseException:
                 pass
@@ -33,6 +33,7 @@ class ServerSikuliClass(object):
         return obj
 
     def __init__(self, obj, *args, **kwargs):
+        del args, kwargs  # Not used
         self.ojb = obj
 
     @property
@@ -50,8 +51,8 @@ SikuliClass = ServerSikuliClass
 #noinspection PyStatementEffect
 """
 For convenience - anything importing
-:class:`sikuli_client.sikuli_class.SikuliClass` will get
-:class:`~sikuli_client.sikuli_class.ClientSikuliClass`, wheras anything
-importing :class:`sikuli_server.class_definitions.sikuli_class.SikuliClass` will
-get :class:`~sikuli_server.class_definitions.sikuli_class.ServerSikuliClass`
+:class:`python_sikuli_client.sikuli_class.SikuliClass` will get
+:class:`~python_sikuli_client.sikuli_class.ClientSikuliClass`, wheras anything
+importing :class:`jython_sikuli_server.class_definitions.sikuli_class.SikuliClass` will
+get :class:`~jython_sikuli_server.class_definitions.sikuli_class.ServerSikuliClass`
 """
