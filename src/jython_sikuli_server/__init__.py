@@ -107,7 +107,7 @@ class SikuliServer(object):
     @property
     def _private_globals(self):
         if not hasattr(self, '__private_globals'):
-            from .classes import SIKULI_CLASSES
+            from jython_sikuli_server.classes import SIKULI_CLASSES
 
             self.__private_globals = {}
             self.__private_globals.update(SIKULI_CLASSES)
@@ -192,14 +192,14 @@ class SikuliServer(object):
         self._eval_objects = []
 
 
-from robotremoteserver import RobotRemoteServer
+from jython_sikuli_server.robotremoteserver import RobotRemoteServer
 
 
 class SikuliRobotRemoteServer(RobotRemoteServer):
     """ RemoteServer that deals with Sikuli types """
 
     def _handle_return_value(self, ret):
-        from .sikuli_class import (ServerSikuliClass, UnimplementedSikuliClass)
+        from jython_sikuli_server.sikuli_class import (ServerSikuliClass, UnimplementedSikuliClass)
 
         if isinstance(ret, ServerSikuliClass):
             return ret._marshallable()

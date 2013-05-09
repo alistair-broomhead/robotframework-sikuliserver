@@ -17,6 +17,7 @@ import inspect
 import traceback
 from StringIO import StringIO
 from SimpleXMLRPCServer import SimpleXMLRPCServer
+
 try:
     import signal
 except ImportError:
@@ -45,14 +46,17 @@ class RobotRemoteServer(SimpleXMLRPCServer):
 
     def _register_signal_handlers(self):
         def stop_with_signal(signum, frame):
+            del signum, frame  # Not used
             self._allow_stop = True
             self.stop_remote_server()
+
         if hasattr(signal, 'SIGHUP'):
             signal.signal(signal.SIGHUP, stop_with_signal)
         if hasattr(signal, 'SIGINT'):
             signal.signal(signal.SIGINT, stop_with_signal)
 
-    def serve_forever(self):
+    def serve_forever(self, poll_interval=0.5):
+        del poll_interval  # Not used
         self._shutdown = False
         while not self._shutdown:
             self.handle_request()
@@ -73,7 +77,7 @@ class RobotRemoteServer(SimpleXMLRPCServer):
             names = get_kw_names()
         else:
             names = [attr for attr in dir(self._library) if attr[0] != '_'
-                     and inspect.isroutine(getattr(self._library, attr))]
+            and inspect.isroutine(getattr(self._library, attr))]
         return names + ['stop_remote_server']
 
     def run_keyword(self, name, args):
@@ -82,7 +86,7 @@ class RobotRemoteServer(SimpleXMLRPCServer):
         self._intercept_stdout()
         try:
             return_value = self._get_keyword(name)(*args)
-        except:
+        except BaseException:
             result['status'] = 'FAIL'
             result['error'], result['traceback'] = self._get_error_details()
         else:

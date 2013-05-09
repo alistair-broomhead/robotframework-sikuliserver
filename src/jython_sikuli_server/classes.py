@@ -1,7 +1,7 @@
 """
 Server-side classes
 """
-from .sikuli_class import ServerSikuliClass
+from jython_sikuli_server.sikuli_class import ServerSikuliClass
 
 try:
     from sikuli import Sikuli
